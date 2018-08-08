@@ -1,0 +1,40 @@
+.gallery__label {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(50%);
+}
+.gallery__label--1 {
+
+}
+
+@for $i from 2 through 4 {
+  .gallery__label--#{$i} { 
+        display: none;
+    }
+}
+
+@for $i from 1 through 3 {
+    #gallery#{$i}:checked ~ {
+        .gallery__pictures .infoFigure {
+            &:nth-child(#{$i}) {
+                transform: translateX(-200%);
+                transition: 0.3s;
+            }
+            &:nth-child(#{$i+1}) {
+                right: 50%;
+                transform: translateX(50%);
+                transition: 0.3s;
+            }
+        }
+        .gallery__label--#{$i} {
+            left: 0;
+            .clients__arrow {
+                transform: rotate(180deg);
+            }
+        }
+        .gallery__label--#{$i+1} {
+            display: block;
+        }
+    }
+}

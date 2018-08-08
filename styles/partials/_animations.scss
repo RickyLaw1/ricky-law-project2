@@ -1,0 +1,16 @@
+@keyframes pulse {
+    0% {transform: scale(1.2); }
+    100% {
+        
+    }
+}
+
+@keyframes sway {
+    0% { }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
